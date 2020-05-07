@@ -12,4 +12,4 @@
 /captures
 .externalNativeBuild
 .cxx
-.app/src/main/java/com/example/myweather/utils/constants.kt
+/.app/src/main/java/com/example/myweather/utils/constants.kt
