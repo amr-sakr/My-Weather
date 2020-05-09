@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/todayFragment"
+        android:icon="@drawable/ic_baseline_today_24"
+        android:title="@string/today" />
+
+
+    <item
+        android:id="@+id/nextWeekFragment"
+        android:icon="@drawable/ic_baseline_date_range_24"
+        android:title="@string/next_week" />
+
+
+    <item
+        android:id="@+id/settingsFragment"
+        android:icon="@drawable/ic_baseline_settings_24"
+        android:title="@string/setting_nav" />
+</menu>

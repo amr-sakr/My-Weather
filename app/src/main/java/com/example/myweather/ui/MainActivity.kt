@@ -2,42 +2,29 @@ package com.example.myweather.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.setupWithNavController
 import com.example.myweather.R
-import com.example.myweather.networking.NetworkConnectionInterceptor
-import com.example.myweather.networking.RequestInterceptor
-import com.example.myweather.networking.SafeApiRequest
-import com.example.myweather.networking.WebService
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import timber.log.Timber
-import java.lang.Exception
+import com.example.myweather.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var navController: NavController
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        setSupportActionBar(binding.toolbar)
+        navController = Navigation.findNavController(this, R.id.nav_host_fragment)
+        binding.bottomNav.setupWithNavController(navController)
+        NavigationUI.setupActionBarWithNavController(this, navController)
+    }
 
-
-        // Just to make sure that Api call is working properly and will be removed
-        GlobalScope.launch(Dispatchers.Main) {
-            val networkConnectionInterceptor = NetworkConnectionInterceptor(this@MainActivity)
-            val requestInterceptor = RequestInterceptor()
-
-            try {
-                val response = WebService(networkConnectionInterceptor, requestInterceptor).getCurrentWeather("New York")
-                test_tv.text = response.body().toString()
-                Toast.makeText(this@MainActivity, response.code().toString(), Toast.LENGTH_SHORT).show()
-            } catch (e: Exception) {
-                Timber.d("exception is ${e.message}")
-                Timber.d("exception isss ${e.stackTrace}")
-                Toast.makeText(this@MainActivity, e.message.toString(), Toast.LENGTH_SHORT).show()
-                e.stackTrace
-            }
-
-
-        }
+    override fun onSupportNavigateUp(): Boolean {
+        return NavigationUI.navigateUp(navController, null)
     }
 }

@@ -1,4 +1,4 @@
-package com.example.myweather.networking
+package com.example.myweather.data.source.remote
 
 import com.example.myweather.data.WeatherResponse
 import okhttp3.OkHttpClient
