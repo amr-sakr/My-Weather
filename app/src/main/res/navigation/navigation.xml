@@ -6,9 +6,9 @@
     app:startDestination="@id/todayFragment">
     <fragment
         android:id="@+id/todayFragment"
-        android:name="com.example.myweather.ui.today.TodayFragment"
+        android:name="com.example.myweather.ui.today.CurrentFragment"
         android:label="@string/today"
-        tools:layout="@layout/today_fragment" />
+        tools:layout="@layout/current_fragment" />
     <fragment
         android:id="@+id/nextWeekFragment"
         android:name="com.example.myweather.ui.nextWeek.NextWeekFragment"

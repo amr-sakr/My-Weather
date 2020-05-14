@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.today.CurrentFragment">
+
+
+    <TextView
+        android:id="@+id/date_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/start_margin_main"
+        android:layout_marginTop="38dp"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="May 2020" />
+
+
+    <TextView
+        android:id="@+id/current_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/start_margin_main"
+        android:layout_marginTop="8dp"
+        android:textSize="52sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date_time"
+        tools:text="20" />
+
+
+    <TextView
+        android:id="@+id/degree_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/degree_label"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/current_temp"
+        app:layout_constraintTop_toBottomOf="@+id/date_time" />
+
+
+    <TextView
+        android:id="@+id/feels_like_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/start_margin_main"
+        android:layout_marginTop="8dp"
+        android:text="@string/feels_like"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/current_temp" />
+
+
+    <TextView
+        android:id="@+id/feels_like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:textSize="12sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/feels_like_label"
+        app:layout_constraintStart_toEndOf="@+id/feels_like_label"
+        tools:text="20°" />
+
+
+    <ImageView
+        android:id="@+id/iv_weather"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="@dimen/start_margin_main"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="16dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/backgrounds/scenic" />
+
+
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/feels_like_label"
+        app:layout_constraintEnd_toEndOf="@+id/iv_weather"
+        app:layout_constraintStart_toStartOf="@+id/iv_weather"
+        tools:text="clear" />
+
+    <TextView
+        android:id="@+id/details_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
+        android:text="@string/current_details"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/feels_like_label" />
+
+    <TextView
+        android:id="@+id/tv_humidity_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/start_margin_main"
+        android:layout_marginTop="32dp"
+        android:text="@string/humidity"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/details_label" />
+
+
+    <TextView
+        android:id="@+id/tv_humidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="19%"
+        android:textSize="14sp"
+        android:textColor="@color/primaryTextColor"
+        android:layout_marginStart="120dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_humidity_label"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv_pressure_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/start_margin_main"
+        android:layout_marginTop="8dp"
+        android:text="@string/pressure"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_humidity_label" />
+
+
+    <TextView
+        android:id="@+id/tv_pressure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="1040 mBar"
+        android:textSize="14sp"
+        android:textColor="@color/primaryTextColor"
+        android:layout_marginStart="120dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_pressure_label"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv_uv_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/start_margin_main"
+        android:layout_marginTop="8dp"
+        android:text="@string/uv_index"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pressure_label" />
+
+
+    <TextView
+        android:id="@+id/tv_uv_index"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="6"
+        android:textSize="14sp"
+        android:textColor="@color/primaryTextColor"
+        android:layout_marginStart="120dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_uv_label"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv_visibility_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/start_margin_main"
+        android:layout_marginTop="8dp"
+        android:text="@string/visibility"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_uv_index" />
+
+
+    <TextView
+        android:id="@+id/tv_visibility"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="16 km"
+        android:textSize="14sp"
+        android:textColor="@color/primaryTextColor"
+        android:layout_marginStart="120dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_visibility_label"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+    <TextView
+        android:id="@+id/tv_precipitation_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/start_margin_main"
+        android:layout_marginTop="8dp"
+        android:text="@string/precipitation"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_visibility_label" />
+
+
+    <TextView
+        android:id="@+id/tv_precipitation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="2%"
+        android:textSize="14sp"
+        android:textColor="@color/primaryTextColor"
+        android:layout_marginStart="120dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_precipitation_label"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/wind_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/start_margin_main"
+        android:layout_marginTop="22dp"
+        android:text="@string/wind"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_precipitation_label" />
+
+
+    <TextView
+        android:id="@+id/wind_direction_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/start_margin_main"
+        android:layout_marginTop="8dp"
+        android:text="@string/wind_direction"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wind_label" />
+
+
+    <TextView
+        android:id="@+id/tv_wind_direction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="EW"
+        android:textSize="14sp"
+        android:textColor="@color/primaryTextColor"
+        android:layout_marginStart="120dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/wind_direction_label"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+    android:id="@+id/wind_speed_label"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/start_margin_main"
+    android:layout_marginTop="8dp"
+    android:text="@string/wind_speed"
+    android:textSize="14sp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/wind_direction_label" />
+
+
+    <TextView
+        android:id="@+id/tv_wind_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="5 kmh"
+        android:textSize="14sp"
+        android:textColor="@color/primaryTextColor"
+        android:layout_marginStart="120dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/wind_speed_label"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/wind_degree_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/start_margin_main"
+        android:layout_marginTop="8dp"
+        android:text="@string/degree"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_wind_speed" />
+
+
+    <TextView
+        android:id="@+id/tv_wind_degree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="200"
+        android:textSize="14sp"
+        android:textColor="@color/primaryTextColor"
+        android:layout_marginStart="120dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/wind_degree_label"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

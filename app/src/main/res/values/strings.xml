@@ -3,4 +3,16 @@
     <string name="today">Today</string>
     <string name="next_week">Next Week</string>
     <string name="setting_nav">Settings</string>
+    <string name="degree_label">°C</string>
+    <string name="feels_like">Feels like</string>
+    <string name="current_details">Current details</string>
+    <string name="humidity">Humidity</string>
+    <string name="pressure">Pressure</string>
+    <string name="uv_index">UV Index</string>
+    <string name="visibility">Visibility</string>
+    <string name="wind">Wind</string>
+    <string name="wind_direction">Direction</string>
+    <string name="wind_speed">Speed</string>
+    <string name="degree">Degree</string>
+    <string name="precipitation">Precipitation</string>
 </resources>
